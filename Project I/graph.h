@@ -10,7 +10,7 @@ typedef struct node node;
 
 struct Graph{
     int num_vertices;
-    node** adj_lists;
+    node** head;
     node** rear;
 };
 typedef struct Graph Graph;
