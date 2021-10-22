@@ -26,7 +26,7 @@ int count_vertices(char direc_file[]){
 }
 
 int main(){
-    char direc_input_file[] = "C:\\Users\\DELL\\OneDrive\\Máy tính\\Project I\\Project I\\roadNet-PA\\roadNet-PA.txt";
+    char direc_input_file[] = "roadNet-PA.txt";
     FILE *input_graph = fopen(direc_input_file, "r");
     if (input_graph == NULL){
         perror("Unable to open the file");
@@ -44,7 +44,7 @@ int main(){
         switch (n){
         // breath first search
         case 1:{
-            FILE* bfs_file = fopen("C:\\Users\\DELL\\OneDrive\\Máy tính\\Project I\\Project I\\roadNet-PA\\outputBFS.txt", "w");
+            FILE* bfs_file = fopen("outputBFS.txt", "w");
             bfs(graph, 2, num_vertex, bfs_file);
             printf("\tBFS Done!\n");
         }
@@ -52,7 +52,7 @@ int main(){
 
         // deep first search
         case 2:{
-            FILE* dfs_file = fopen("C:\\Users\\DELL\\OneDrive\\Máy tính\\Project I\\Project I\\roadNet-PA\\outputDFS.txt", "w");
+            FILE* dfs_file = fopen("outputDFS.txt", "w");
             dfs(graph, 2, num_vertex, dfs_file);
             printf("\tDFS Done!\n");
         }
@@ -60,13 +60,13 @@ int main(){
 
         // check vertex cover
         case 3:{
-            FILE *ver_cover_file = fopen("C:\\Users\\DELL\\OneDrive\\Máy tính\\Project I\\Project I\\roadNet-PA\\roadNet-PA.VC", "r");
-            if (ver_cover_file == NULL){                                                                  // vertexCover
+            FILE *ver_cover_file = fopen("roadNet-PA.VC", "r");
+            if (ver_cover_file == NULL){                                                                 
                 perror("Unable to open the file");
                 exit(1);
             }
 
-            FILE *input_temp_graph = fopen("C:\\Users\\DELL\\OneDrive\\Máy tính\\Project I\\Project I\\roadNet-PA\\roadNet-PA.txt", "r");
+            FILE *input_temp_graph = fopen("roadNet-PA.txt", "r");
             Graph* temp_graph = create_a_graph(num_vertex);
             build_graph(temp_graph, input_temp_graph);
 
@@ -78,7 +78,7 @@ int main(){
 
         case 4:{
             // Print graph
-            FILE* output_file = fopen("C:\\Users\\DELL\\OneDrive\\Máy tính\\Project I\\Project I\\roadNet-PA\\output.txt", "w");
+            FILE* output_file = fopen("output.txt", "w");
             print_graph(graph, output_file);
             printf("\tPrint Graph\n");
         }
