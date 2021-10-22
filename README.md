@@ -1,4 +1,4 @@
-# qLinhGraph
+# undirecGraph
 Project I - Undirected Graph in C
 
 - Sử dụng ngôn ngữ C để cài đặt cấu trúc dữ liệu đơn đồ thị vô hướng G = (V, E)
