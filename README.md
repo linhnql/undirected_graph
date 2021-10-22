@@ -6,6 +6,7 @@ Project I - Undirected Graph in C
 - Thực hiện các thao tác cơ bản: duyệt đồ thị theo chiều rộng (BFS), chiều sâu (DFS) và kiểm tra tập đỉnh bao phủ (Vertex Cover) (https://en.wikipedia.org/wiki/Vertex_cover)
 
 KIỂM TRA TẬP ĐỈNH PHỦ:
+idea: xóa cạnh có đỉnh xuất hiện trong file input
 
 Đọc lần lượt phần tử trong file input. Với mỗi đỉnh, thực hiện xoá các cạnh liên quan đến đỉnh đó. Ví dụ với đỉnh A, phải xoá đỉnh A nếu A có trong danh sách kề của các đỉnh còn lại và xóa luôn danh sách kề của A:
 - Duyệt danh sách kề đỉnh A.
