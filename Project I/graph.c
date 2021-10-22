@@ -26,7 +26,7 @@ Graph* create_a_graph(int vertices){
 void add_edge(Graph* graph, int s, int d){
     // Add edge from s to d
     node* new_node = create_node(d);
-    if (graph -> head[s] == NULL) graph -> adj_lists[s] = new_node, graph -> rear[s] = new_node;
+    if (graph -> head[s] == NULL) graph -> head[s] = new_node, graph -> rear[s] = new_node;
     else {
         new_node -> prev = graph -> rear[s];
         graph -> rear[s] -> next = new_node;
