@@ -14,10 +14,10 @@ node* create_node(int v){
 Graph* create_a_graph(int vertices){
     Graph* graph = malloc(sizeof(Graph));
     graph -> num_vertices = vertices;
-    graph -> adj_lists = malloc(vertices * sizeof(node*));
+    graph -> head = malloc(vertices * sizeof(node*));
     graph -> rear = malloc(vertices * sizeof(node*));
     for (int i = 0; i < vertices; ++i){
-        graph -> adj_lists[i] = NULL;
+        graph -> head[i] = NULL;
         graph -> rear[i] = NULL;
     }
     return graph;
@@ -26,7 +26,7 @@ Graph* create_a_graph(int vertices){
 void add_edge(Graph* graph, int s, int d){
     // Add edge from s to d
     node* new_node = create_node(d);
-    if (graph -> adj_lists[s] == NULL) graph -> adj_lists[s] = new_node, graph -> rear[s] = new_node;
+    if (graph -> head[s] == NULL) graph -> adj_lists[s] = new_node, graph -> rear[s] = new_node;
     else {
         new_node -> prev = graph -> rear[s];
         graph -> rear[s] -> next = new_node;
@@ -45,7 +45,7 @@ void build_graph(Graph* graph, FILE* f){
 
 void print_graph(Graph* graph, FILE* f){
     for (int v = 0; v < graph -> num_vertices; ++v){
-        node* temp = graph -> adj_lists[v];
+        node* temp = graph -> head[v];
         fprintf(f, "\nV%d: ", v);
         while (temp){
             fprintf(f, "%d ", temp -> vertex);
@@ -65,7 +65,7 @@ void bfs(Graph* graph, int start_vertex, int num_vertices, FILE* f){
         int curVer = dequeue(q);
         fprintf(f, "%d ", curVer);
 
-        node* temp = graph -> adj_lists[curVer];
+        node* temp = graph -> head[curVer];
         while (temp){
             int adjVer = temp -> vertex;
             if (visited[adjVer] == 0) visited[adjVer] = 1, enqueue(q, adjVer);
@@ -100,18 +100,18 @@ void dfs(Graph* graph, int start_vertex, int num_vertices, FILE* f){
 }
 
 void delete_vertex(Graph* graph, int v){
-    node* temp = graph -> adj_lists[v];
+    node* temp = graph -> head[v];
     while (temp){
         int cur_ver = temp -> vertex;
 
-        node* sub_ver = graph -> adj_lists[cur_ver];
+        node* sub_ver = graph -> head[cur_ver];
         if (sub_ver -> vertex == v){
             if (sub_ver -> next){
-                graph -> adj_lists[cur_ver] -> vertex = sub_ver -> next -> vertex;
-                graph -> adj_lists[cur_ver] = sub_ver -> next;
+                graph -> head[cur_ver] -> vertex = sub_ver -> next -> vertex;
+                graph -> head[cur_ver] = sub_ver -> next;
                 free(sub_ver);
             } else {
-                graph -> adj_lists[cur_ver] = NULL;
+                graph -> head[cur_ver] = NULL;
                 free(sub_ver);
             }
             temp = temp -> next;
@@ -155,7 +155,7 @@ int check_cover(Graph* graph, FILE* f){
     fclose(f);
 
     for (int v = 0; v < graph -> num_vertices; ++v){
-        if (graph -> adj_lists[v] != NULL) return 0;
+        if (graph -> head[v] != NULL) return 0;
     }
     return 1;
 }
