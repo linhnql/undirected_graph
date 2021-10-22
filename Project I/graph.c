@@ -138,7 +138,7 @@ void delete_vertex(Graph* graph, int v){
         }
         temp = temp -> next;
     }
-    graph -> adj_lists[v] = NULL;
+    graph -> head[v] = NULL;
 }
 
 int check_cover(Graph* graph, FILE* f){
