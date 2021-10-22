@@ -1,0 +1,5 @@
+# Graph File ../../../Datasets/Graph/Stanford/roadNet-PA.vc
+# Total number of vertices 1088092 
+# The number of VC 556313 
+v 0
+v 1
