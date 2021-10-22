@@ -10,7 +10,7 @@ Project I - Undirected Graph in C
 
 KIỂM TRA TẬP ĐỈNH PHỦ:
 
-Đọc lần lượt phần tử trong file input. Với mỗi đỉnh, thực hiện xoá các cạnh liên quan đến đỉnh đó. Ví dụ với đỉnh A, phải xoá đỉnh A trong các đỉnh còn lại và danh sách kề của A:
+Đọc lần lượt phần tử trong file input. Với mỗi đỉnh, thực hiện xoá các cạnh liên quan đến đỉnh đó. Ví dụ với đỉnh A, phải xoá đỉnh A trong danh sách kề của các đỉnh còn lại và xóa luôn danh sách kề của A:
 - Duyệt danh sách kề đỉnh A.
 - Với mỗi phân tử trong A, ví dụ a, thực hiện duyệt đỉnh kề của a để tìm phần tử A để xoá, trong danh sách kề của a, nếu đã tìm được và xoá, nhảy đến đỉnh b trong danh sách kề của A.
 - Thực hiện công việc trên cho đến khi A rỗng.
