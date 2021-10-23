@@ -43,6 +43,19 @@ void build_graph(Graph* graph, FILE* f){
     fclose(f);
 }
 
+int count_vertices(char direc_file[]){
+    FILE *f = fopen(direc_file, "r");
+    skip_line(f);    skip_line(f);
+    skip_line(f);    skip_line(f);
+
+    int n; fscanf(f, "%d", &n);
+    int max = n;
+    while (fscanf(f, "%d", &n) == 1) max = n > max ? n : max;
+
+    fclose(f);
+    return max;
+}
+
 void print_graph(Graph* graph, FILE* f){
     for (int v = 0; v < graph -> num_vertices; ++v){
         node* temp = graph -> head[v];
