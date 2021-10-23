@@ -12,7 +12,7 @@ KIỂM TRA TẬP ĐỈNH PHỦ:
 
 Ví dụ với đỉnh A, phải xoá đỉnh A nếu A xuất hiện trong danh sách kề của các đỉnh còn lại và xóa luôn danh sách kề của A.
 - Duyệt danh sách kề đỉnh A.
-- Với mỗi phân tử trong ds kề của A, ví dụ a, thực hiện duyệt đỉnh kề của a để tìm phần tử A và xoá nếu có. Nếu đã tìm được và xoá, nhảy đến đỉnh b kế tiếp trong danh sách kề của A.
+- Với mỗi phân tử trong ds kề của A, ví dụ a, thực hiện duyệt ds kề của a để tìm phần tử A và xoá nếu có. Nếu đã tìm được và xoá, nhảy đến đỉnh b kế tiếp trong danh sách kề của A.
 - Thực hiện công việc trên cho đến khi A rỗng.
 - Cuối cùng, gán danh sách kề của A bằng rỗng.
 - Sau khi xóa, nếu thu được đồ thị (danh sách kề) rỗng, tập đỉnh kiểm tra là tập đỉnh bao phủ.
