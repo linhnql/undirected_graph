@@ -18,6 +18,7 @@ typedef struct Graph Graph;
 node* create_node(int);
 Graph* create_a_graph(int);
 void add_edge(Graph*, int, int);
+int count_vertices(char[]);
 void print_graph(Graph*, FILE*);
 void bfs(Graph*, int, int, FILE*);
 void dfs(Graph*, int, int, FILE*);
